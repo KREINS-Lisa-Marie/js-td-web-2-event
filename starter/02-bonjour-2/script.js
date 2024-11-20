@@ -12,13 +12,47 @@
 */
 
 
+
+const prenom = document.getElementById("prenom");
+
+const bouton = document.getElementById('hello');
+
+
+//console.log(prenom.value);   TEST
+
+function prenomretour() {
+    if (prenom.value !== ""){
+        alert(`Bonjour, ${prenom.value} ! `);
+    }else {
+        alert("Bonjour, toi ! Tu ne veux pas me dire comment tu t'appelles ?");
+    }
+}
+
+
+
+bouton.addEventListener('click', prenomretour);
+
+
+
 // Autre écriture
 
-
+prenom.addEventListener('click', function () {
+    if (prenom.value !== ""){
+        alert(`Bonjour, ${prenom.value} ! `);
+    }else {
+        alert("Bonjour, toi ! Tu ne veux pas me dire comment tu t'appelles ?");
+    }
+});
 
 
 // Plus court : écriture ES6 avec expression conditionnelle
 
-
+prenom.addEventListener('click',  () =>{
+    if (prenom.value !==""){
+        alert(`Bonjour, ${prenom.value} ! `);
+    }else {
+        alert("Bonjour, toi ! Tu ne veux pas me dire comment tu t'appelles ?");
+    }
+});
 
 

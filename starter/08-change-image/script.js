@@ -29,5 +29,80 @@ La méthode classique est de créer une variable temporaire, comme ceci :
 
 // version de base
 
+// Meine Lösung TEST
+
+
+let source = document.querySelector('img');
+console.log(source);
+let hover = document.querySelector('img').dataset.hover;
+console.log(hover);
+document.querySelector('img').addEventListener('click', function (evt){
+    if (document.querySelector('img').src === source){
+        console.log(evt.currentTarget);
+        [source.src, hover] = [hover, source.src];
+    }else {
+        [hover, source.src] = [source.src, hover];
+    }
+})
+
+
+
+
+
+
+
+/*        --------------  premiere Solution du cours  -----------
+
+const imageElement = document.querySelector("img");     // objet de type element   = image
+                        // objet a proprietes et methodes
+const src = imageElement.src;               // valeur recupere quand page chargé
+const dataHover = imageElement.dataset.hover;
+
+
+imageElement.addEventListener("click", function (evt) {
+    console.log(evt);   // quand click affiche dans la console ou on a clické et  autres infos  (currentTarget   impt  = cible de l'évenement)
+
+    if (evt.currentTarget.src === src ){
+        evt.currentTarget.src = dataHover;   // = image qui vient d'etre clické
+    } else {
+        evt.currentTarget.src = src;
+    }
+
+});
+
+
+// type et ref de fonction (nom fonction)
+// déclaration de fonction vaut ....?
+// fonction peut prendre param (= evenement = evt)
+// mouseevent = objet
+
+
+*/
+
+
+
+
+// -------NEUE Lösung Unterricht
+
+
+/*
+document.querySelector('img').addEventListener('click', function (e) {
+    [
+        e.currentTarget.src,
+        e.currentTarget.dataset.hover
+    ]=[
+        e.currentTarget.dataset.hover,
+        e.currentTarget.src
+    ]
+})
+
+
+
+*/
+
+
+
+
+
 
 // BONUS : switch entre les deux images

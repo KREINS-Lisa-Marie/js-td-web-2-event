@@ -7,7 +7,7 @@
  */
 
 :root {
-    --main-blue: #16232E;
+    --main-blue: #16232E;           /*variable du css*/
     --light-blue: #63C3D1;
     --alt-blue: #245060;
 }

@@ -14,3 +14,21 @@ EXERCICE 6 : Change couleur (3)
 
 // ÉTAPE 2 : version avec deux écouteurs
 
+const bouton = document.getElementById('colorBtn');
+
+document.addEventListener(
+    "keydown",
+    (event) => {
+        const nomTouche = event.key;
+        if (nomTouche === "ENTER") {
+            const valeurInput = document.getElementById('colorChoice').value;
+            document.body.preventDefault();
+            document.body.style.backgroundColor = `${valeurInput}`;
+        }
+    })
+
+bouton.addEventListener('click', function colorerPage() {
+    const valeurInput = document.getElementById('colorChoice').value;
+    //console.log(valeurInput);
+    document.body.style.backgroundColor = `${valeurInput}`;
+})

@@ -14,5 +14,13 @@ Ta mission est toujours la même : au clic sur un des boutons, colorie la page d
 
 // BONUS : encore mieux avec la boucle
 
+const boutons = document.getElementsByTagName("button");
+
+
+for (const bouton of boutons) {
+    bouton.addEventListener('click', function (){
+        document.body.style.backgroundColor = bouton.id;
+    })
+}
 
 

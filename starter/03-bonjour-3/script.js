@@ -5,6 +5,17 @@ Au clic sur le bouton,
 - fais disparaître le bouton
 */
 
+const bouton = document.getElementById('hello');
+
+const endroit = document.getElementsByClassName('display');
+
+function insererImage() {
+endroit[0].insertAdjacentHTML("afterbegin", `<img src= "bonjour.jpg" width="800" height="689" alt="image bonjour">`);
+bouton.remove();
+}
+
+
+bouton.addEventListener('click', insererImage);
 
 
 /*
@@ -26,8 +37,48 @@ Quand l'événement se déclenche, JavaScript crée un objet Event qui peut êtr
 C'est une notion IMPORTANTE, essentielle, très très souvent utilisée dans la programmation événementielle.
 */
 
+
+
+const bouton1 = document.getElementById('hello');
+
+const endroit1 = document.getElementsByClassName('display');
+
+function direBonjour(evt) {
+    endroit1[0].insertAdjacentHTML("afterbegin", `<img src= "bonjour.jpg" width="800" height="689" alt="image bonjour">`);
+    console.log(evt.currentTarget);
+    evt.currentTarget.remove();
+}
+
+bouton1.addEventListener('click', direBonjour);
+
+
+
 // autre écriture
+
+const bouton2 = document.getElementById('hello');
+
+const endroit2 = document.getElementsByClassName('display');
+
+bouton2.addEventListener('click',
+    function (evt) {
+        endroit2[0].insertAdjacentHTML("afterbegin", `<img src= "bonjour.jpg" width="800" height="689" alt="image bonjour">`);
+        console.log(evt.currentTarget);
+        evt.currentTarget.remove();
+    });
+
+
 
 
 
 // Écriture ES6
+
+const bouton3 = document.getElementById('hello');
+
+const endroit3 = document.getElementsByClassName('display');
+
+
+bouton3.addEventListener('click', (evt) =>{
+    endroit3[0].insertAdjacentHTML("afterbegin", `<img src= "bonjour.jpg" width="800" height="689" alt="image bonjour">`);
+    console.log(evt.currentTarget);
+    evt.currentTarget.remove();
+});
